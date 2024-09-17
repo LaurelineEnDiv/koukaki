@@ -1,0 +1,22 @@
+# Exclude WordPress core files
+/wp-admin/
+/wp-includes/
+
+# Exclude WordPress configuration file
+wp-config.php
+
+# Exclude plugins and themes unless they are custom
+wp-content/plugins/*
+!wp-content/plugins/mon-plugin-personnalise/
+wp-content/themes/*
+!wp-content/themes/mon-theme-personnalise/
+
+# Exclude uploads
+wp-content/uploads/
+
+# Other
+.idea/
+node_modules/
+vendor/
+.env
+.DS_Store
