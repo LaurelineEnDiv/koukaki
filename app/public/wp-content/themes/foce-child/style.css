@@ -39,3 +39,20 @@
         transform: rotate(360deg);
     }
 }
+
+  h2 span {
+    display: inline-block; /* Permet d'animer l'élément de manière indépendante */
+    opacity: 0;
+    transform: translateY(80px); /* Le titre est positionné 80px plus bas */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animation fluide */
+  }
+
+  h2 span.koukaki {
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Animation fluide */
+  }
+  
+  h2.show span {
+    opacity: 1;
+    transform: translateY(0); /* Le titre remonte à sa position normale */
+  }
+  
