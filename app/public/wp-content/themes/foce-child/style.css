@@ -8,15 +8,37 @@
  Version: 0.1
  */
 
- /* Fade in à l'apparition des sections*/
- .banner, .story, #studio {
-  opacity: 0;
-  transition: opacity 2s ease-in;
+
+ /* Animation fade-in pour toutes les sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Légèrement décalé vers le bas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Position initiale */
+  }
 }
 
-.banner.show, .story.show, #studio.show {
-  opacity: 1;
+.banner, .story, #studio {
+  opacity: 0; 
+  animation: fadeInUp 1s ease-in-out forwards; 
 }
+
+/* Délai différent pour chaque section */
+.banner {
+  animation-delay: 0.5s; /* Délai pour la première section */
+}
+
+.story {
+  animation-delay: 1s; /* Délai pour la deuxième section */
+}
+
+#studio {
+  animation-delay: 1.5s; /* Délai pour la troisième section */
+}
+
 
 /* Rotation des fleurs */
 .story__article::after, .story h2::after, .site-footer::before, #studio h2::after {
@@ -33,19 +55,33 @@
 }
 
 /* Animation des titres */
-h2 span {
+span.title {
     display: inline-block; /* Permet d'animer l'élément de manière indépendante */
     opacity: 0;
     transform: translateY(80px); /* Le titre est positionné 80px plus bas */
     transition: opacity 1s ease-out, transform 1s ease-out; 
 }
 
-h2 span.koukaki {
+span.title.koukaki {
     transition: opacity 1.5s ease-out, transform 1.5s ease-out; 
+    transition-delay: 0.5s; 
 }
   
-h2.show span {
+span.title.show {
     opacity: 1;
     transform: translateY(0); /* Le titre remonte à sa position normale */
+}
+
+
+/* Section ajoutée (Oscars) */
+#oscar > div {
+  display: flex;
+	align-items: flex-start;
+	margin-left: 6em;
+}
+
+.txt-oscar {
+  background-image: url("../foce/assets/images/orange_characters_bg.png");
+  color: blue;
 }
   
