@@ -10,10 +10,10 @@
 
 
  /* Animation fade-in pour toutes les sections */
-@keyframes fadeInUp {
+@keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Légèrement décalé vers le bas */
+    transform: translateY(-150px); /* Décalé vers le haut */
   }
   to {
     opacity: 1;
@@ -21,28 +21,33 @@
   }
 }
 
-.banner, .story, #studio {
-  opacity: 0; 
-  animation: fadeInUp 1s ease-in-out forwards; 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(200px); /* Décalé vers le bas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Position initiale */
+  }
 }
 
-/* Délai différent pour chaque section */
 .banner {
+  opacity: 0; 
+  animation: fadeInDown 1.5s ease-in-out forwards; 
   animation-delay: 0.5s; /* Délai pour la première section */
 }
 
 .story {
-  animation-delay: 1s; /* Délai pour la deuxième section */
-}
-
-#studio {
-  animation-delay: 1.5s; /* Délai pour la troisième section */
+  opacity: 0; 
+  animation: fadeInUp 1.5s ease-in-out forwards; 
 }
 
 
 /* Rotation des fleurs */
 .story__article::after, .story h2::after, .site-footer::before, #studio h2::after {
     animation: rotateFlower 15s infinite linear;
+    animation-delay: 3s;
 }
 
 @keyframes rotateFlower {
@@ -76,12 +81,11 @@ span.title.show {
 /* Section ajoutée (Oscars) */
 #oscar > div {
   display: flex;
-	align-items: flex-start;
-	margin-left: 6em;
+  justify-content: center;
+  align-items: center;
 }
 
 .txt-oscar {
   background-image: url("../foce/assets/images/orange_characters_bg.png");
-  color: blue;
 }
   
