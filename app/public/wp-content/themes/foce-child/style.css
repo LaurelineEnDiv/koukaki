@@ -33,9 +33,29 @@
 }
 
 .banner {
+  position: relative;
+  overflow: hidden; /* Pour éviter que la vidéo dépasse de la section */
   opacity: 0; 
   animation: fadeInDown 1.5s ease-in-out forwards; 
   animation-delay: 0.5s; /* Délai pour la première section */
+}
+
+.banner img {
+  position: relative;
+  z-index: 2; /* Pour s'assurer que l'image reste au-dessus de la vidéo */
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Derrière l'image */
+  object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
 }
 
 .story {
@@ -83,9 +103,26 @@ span.title.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5em;
 }
 
 .txt-oscar {
   background-image: url("../foce/assets/images/orange_characters_bg.png");
+  font-size: 38px;
 }
   
+
+/**********Version Mobile*************/
+@media (max-width: 768px) {
+
+  .background-video {
+      display: none;
+  }
+
+  #oscar > div {
+    flex-direction: column;
+  }
+
+
+}
+
