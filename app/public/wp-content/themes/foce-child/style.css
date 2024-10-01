@@ -32,6 +32,28 @@
   }
 }
 
+/* Animation de flottement du logo */
+@keyframes float {
+  0% {
+      transform: translate(0, 0); /* Position initiale */
+  }
+  20% {
+      transform: translate(5px, -5px); /* Légère translation en haut à droite */
+  }
+  40% {
+      transform: translate(-5px, 5px); /* Légère translation en bas à gauche */
+  }
+  60% {
+      transform: translate(3px, -3px); /* Légère translation en haut à droite */
+  }
+  80% {
+      transform: translate(-3px, 3px); /* Légère translation en bas à gauche */
+  }
+  100% {
+      transform: translate(0, 0); /* Retour à la position initiale */
+  }
+}
+
 .banner {
   position: relative;
   overflow: hidden; /* Pour éviter que la vidéo dépasse de la section */
@@ -42,19 +64,16 @@
 
 .banner img {
   position: relative;
-  z-index: 2; /* Pour s'assurer que l'image reste au-dessus de la vidéo */
+  z-index: 2; /* Pour s'assurer que le logo reste au-dessus de la vidéo */
+  animation: float 6s ease-in-out infinite; /* Animation continue */
 }
 
 .background-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Derrière l'image */
+  z-index: 1; /* Derrière le logo */
   object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
 }
 
