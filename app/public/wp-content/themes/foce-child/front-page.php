@@ -5,7 +5,7 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants" class="parallax-logo">
             <!-- Vidéo de fond -->
             <video autoplay muted loop playsinline class="background-video">
                 <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/Studio-Koukaki-video.mp4'; ?>" type="video/mp4">
