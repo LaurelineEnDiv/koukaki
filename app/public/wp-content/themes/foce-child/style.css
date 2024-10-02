@@ -42,9 +42,35 @@
   animation: float 6s ease-in-out infinite; /* Animation continue */
 }
 
-.banner img, .story h2::before, .story h2::after, .story__article::before, .story__article::after {
+.banner img,
+.story h2::before,
+.story__article::before {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards;
+}
+
+/* Animation rotation des fleurs */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotateFlower 15s infinite linear;
+}
+
+/* Animation fadeInUp + rotate */
+.story__article::after,
+.story h2::after {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
 }
 
 /* Animation de flottement du logo */
@@ -74,19 +100,6 @@
   }
 }
 
-/* Rotation des fleurs 
-.story__article::after, .story h2::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after {
-    animation: rotateFlower 15s infinite linear;
-    animation-delay: 3s;
-}*/
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* Animation des titres */
 span.title {
   display: inline-block; /* Permet d'animer l'élément de manière indépendante */
