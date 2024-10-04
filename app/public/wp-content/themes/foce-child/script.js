@@ -24,4 +24,12 @@
         });
     });
     
-  
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('scroll', function() {
+          const scrollPosition = window.scrollY; 
+          const logo = document.querySelector('.parallax-logo');
+          logo.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+        });
+      });
+
+

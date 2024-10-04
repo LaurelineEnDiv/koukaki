@@ -8,26 +8,40 @@
  Version: 0.1
  */
 
- /* Animation fade-in pour toutes les sections */
+ /* Animation fade-in descendant */
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-100px); /* Décalé vers le haut */
+    transform: translateY(-100px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* Position initiale */
+    transform: translateY(0); 
   }
 }
 
+/* Animation fade-in ascendant */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(100px); /* Décalé vers le bas */
+    transform: translateY(100px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* Position initiale */
+    transform: translateY(0); 
+  }
+}
+
+/* Animation de flottement du logo */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  20%, 60% {
+    transform: translate(5px, -5px);
+  }
+  40%, 80% {
+    transform: translate(-5px, 5px);
   }
 }
 
@@ -35,21 +49,20 @@
   position: relative;
   overflow: hidden; 
   opacity: 0; 
-  animation: fadeInDown 1.5s ease-in-out forwards; 
-  animation-delay: 0.5s; /* Délai pour la première section */
+  animation: fadeInDown 2s ease-in-out forwards; 
+  animation-delay: 0.5s; 
   
-  img {
+  .parallax-logo {
     position: relative;
     z-index: 2; 
     animation: float 6s ease-in-out infinite; /* Animation continue */
-  }
+}
 }
 
-.banner img, 
-.story h2::before,  
-.story__article::before {
+.story h2::before, .story__article::before {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 0.5s; 
 }
 
 /* Animation rotation des fleurs */
@@ -68,6 +81,7 @@
 .site-footer::after, 
 .site-footer ul::after {
     animation: rotateFlower 15s infinite linear;
+    animation-delay: 2s;
 }
 
 /* Animation fadeInUp + rotate */
@@ -77,19 +91,9 @@
   animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
 }
 
-/* Animation de flottement du logo */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  20%, 60% {
-    transform: translate(5px, -5px);
-  }
-  40%, 80% {
-    transform: translate(-5px, 5px);
-  }
-}
 
+
+/* Vidéo */
 .background-video {
   position: absolute;
   top: 50%;
