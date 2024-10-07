@@ -23,6 +23,8 @@
         observer.observe(title);
         });
     });
+
+//Créer un effet de parallaxe avec le logo au scroll
     
     document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', function() {
@@ -31,5 +33,7 @@
           logo.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
         });
       });
+
+    
 
 

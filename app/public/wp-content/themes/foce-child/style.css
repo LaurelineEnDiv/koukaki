@@ -134,4 +134,27 @@ span.title.koukaki {
 .txt-oscar {
   background-image: url("../foce/assets/images/orange_characters_bg.png");
   font-size: 38px;
+}
+
+#characters {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-container {
+  max-width: 100%; /* Limite la largeur à 100% de son conteneur */
+  margin: 0 auto; /* Centre le slider horizontalement */
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: center; /* Centre les slides dans le conteneur */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }/*# sourceMappingURL=style.css.map */
