@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -8,28 +7,31 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-/* Animation fade-in descendant */
+
+ /* Animation fade-in descendant */
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-100px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
   }
 }
+
 /* Animation fade-in ascendant */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(100px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
   }
 }
+
 /* Animation de flottement du logo */
 @keyframes float {
   0%, 100% {
@@ -42,49 +44,54 @@
     transform: translate(-5px, 5px);
   }
 }
+
 .banner {
   position: relative;
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeInDown 2s ease-in-out forwards;
-  animation-delay: 0.5s;
+  overflow: hidden; 
+  opacity: 0; 
+  animation: fadeInDown 2s ease-in-out forwards; 
+  animation-delay: 0.5s; 
+  
+  .parallax-logo {
+    position: relative;
+    z-index: 2; 
+    animation: float 6s ease-in-out infinite; 
 }
-.banner .parallax-logo {
-  position: relative;
-  z-index: 2;
-  animation: float 6s ease-in-out infinite; /* Animation continue */
 }
 
 .story h2::before, .story__article::before {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.5s; 
 }
 
 /* Animation rotation des fleurs */
 @keyframes rotateFlower {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
 }
-#studio h2::before,
-#studio h2::after,
-.site-footer::before,
-.site-footer::after,
+
+#studio h2::before, 
+#studio h2::after, 
+.site-footer::before, 
+.site-footer::after, 
 .site-footer ul::after {
-  animation: rotateFlower 15s infinite linear;
-  animation-delay: 2s;
+    animation: rotateFlower 15s infinite linear;
+    animation-delay: 2s;
 }
 
 /* Animation fadeInUp + rotate */
-.story__article::after,
+.story__article::after, 
 .story h2::after {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
 }
+
+
 
 /* Vidéo */
 .background-video {
@@ -93,12 +100,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; /* Derrière le logo */
-  -o-object-fit: cover;
-     object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
-}
-@media (max-width: 768px) {
-  .background-video {
-    display: none;
+  object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
+
+  @media (max-width: 768px) {
+        display: none;
   }
 }
 
@@ -108,56 +113,44 @@ span.title {
   opacity: 0;
   transform: translateY(100px); /* Le titre est positionné 80px plus bas */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-span.title.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-span.title.koukaki {
-  transition: opacity 2s ease-out, transform 2s ease-out;
-  transition-delay: 0.5s;
-}
 
-/* Section ajoutée (Oscars) */
-#oscar > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5em;
-}
-@media (max-width: 768px) {
-  #oscar > div {
-    flex-direction: column;
+  &.show {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+
+  &.koukaki {
+    transition: opacity 2s ease-out, transform 2s ease-out; 
+    transition-delay: 0.5s; 
   }
 }
 
-.txt-oscar {
-  background-image: url("../foce/assets/images/orange_characters_bg.png");
-  font-size: 38px;
-}
+//////Slider personnages//////
 
 #characters {
   display: flex;
   flex-direction: column;
 }
-
 .swiper-container {
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 100%; 
+  margin: 0 auto; 
   height: 400px;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
-  height: 100%;
+  height: 100%; 
 }
 
+
+////////Lieu/////////
+
 .story #place {
-  background-image: url("assets/images/Studio_Koukaki-image_place.png");
+  background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   position: relative;
   overflow: hidden;
 }
@@ -170,10 +163,32 @@ span.title.koukaki {
 
 .big-cloud {
   top: 60px;
-  right: 60px;
+  right: 60px; 
 }
 
 .little-cloud {
-  top: 230px;
-  right: 400px;
-}/*# sourceMappingURL=style.css.map */
+  top: 230px; 
+  right: 400px; 
+}
+
+/* Section ajoutée (Oscars) */
+#oscar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+
+  @media (max-width: 768px) {
+      flex-direction: column;
+  }
+}
+
+.txt-oscar {
+  background-image: url("../../foce/assets/images/orange_characters_bg.png");
+  font-size: 38px;
+}
+
+
+
+
+
