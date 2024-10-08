@@ -149,21 +149,18 @@ span.title {
   flex-direction: column;
 }
 .swiper-container {
-  max-width: 100%; /* Limite la largeur à 100% de son conteneur */
-  margin: 0 auto; /* Centre le slider horizontalement */
-}
-
-.swiper-wrapper {
-  display: flex;
-  justify-content: center; /* Centre les slides dans le conteneur */
+  max-width: 100%; 
+  margin: 0 auto; 
+  height: 400px;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: center;
-  width: auto; 
+  justify-content: center; 
   padding: 20px;
   box-sizing: border-box;
+  text-align: center;
+  height: 100%; 
 }
 
 

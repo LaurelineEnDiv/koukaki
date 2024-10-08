@@ -36,7 +36,7 @@ get_header();
             </div>
             </section>
         
-        <?php get_template_part('oscar'); ?>
+        <?php get_template_part('template-parts/oscar'); ?>
         
     </main><!-- #main -->
 

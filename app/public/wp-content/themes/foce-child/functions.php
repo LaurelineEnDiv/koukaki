@@ -17,15 +17,10 @@ if ( get_stylesheet() !== get_template() ) {
     } );
 }
 
-// Charger le fichier CSS et le fichier JavaScript de Swiper directement depuis un CDN
-function add_swiper() {
-    wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), '10.0.0' ); 
-    wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), '10.0.0', true ); 
+// Charger le fichier CSS, le fichier JavaScript de Swiper directement depuis un CDN et initialiser Swiper
+function config_swiper() {
+wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), '10.0.0' ); 
+wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), '10.0.0', true );
+wp_enqueue_script( 'swiper-init', get_stylesheet_directory_uri() . '/js/swiper-init.js', array('swiper-js'), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'add_swiper' );
-
-// Charger le fichier d'initialisation pour Swiper
-function add_swiper_init() {
-    wp_enqueue_script( 'swiper-init', get_stylesheet_directory_uri() . '/js/swiper-init.js', array('swiper-js'), null, true );
-}
-add_action( 'wp_enqueue_scripts', 'add_swiper_init' );
+add_action( 'wp_enqueue_scripts', 'config_swiper' );

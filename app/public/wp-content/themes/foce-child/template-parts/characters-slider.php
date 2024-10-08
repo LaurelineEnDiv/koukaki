@@ -25,8 +25,8 @@
             wp_reset_postdata();
             ?>
         </div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
     </div>
 </article>
