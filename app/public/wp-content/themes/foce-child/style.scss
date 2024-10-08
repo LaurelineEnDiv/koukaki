@@ -164,7 +164,29 @@ span.title {
 }
 
 
+////////Lieu/////////
 
+.story #place {
+  background-image: url("assets/images/Studio_Koukaki-image_place.png");
+  position: relative;
+  overflow: hidden;
+}
+
+.big-cloud, .little-cloud {
+  position: absolute;
+  filter: blur(10px);
+  transition: transform 4s ease-in-out;
+}
+
+.big-cloud {
+  top: 60px;
+  right: 60px; 
+}
+
+.little-cloud {
+  top: 230px; 
+  right: 400px; 
+}
 
 
 

@@ -1,4 +1,4 @@
-//Déclencher l'animation des titres à leur apparition 
+//Déclencher l'animation des titres à leur apparition
 
     document.addEventListener("DOMContentLoaded", function () {
         // Sélectionner tous les titres 
@@ -33,6 +33,39 @@
           logo.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
         });
       });
+
+//Déplacement des nuages
+document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollPosition = 0; // Dernière position de défilement
+
+    window.addEventListener('scroll', function() {
+        // Calcul de la position de défilement
+        let scrollPosition = window.scrollY; 
+
+        // Limite l'amplitude du déplacement (max 300px)
+        let maxDisplacement = 300;
+
+        // Calcul de la proportion du déplacement (300px max)
+        let displacement = Math.min(scrollPosition, maxDisplacement);
+
+        // Vérifiez si l'utilisateur fait défiler vers le bas ou vers le haut
+        if (scrollPosition > lastScrollPosition) {
+            // Défilement vers le bas
+            document.querySelector('.big-cloud').style.transform = `translateX(-${displacement}px)`;
+            document.querySelector('.little-cloud').style.transform = `translateX(-${displacement * 0.7}px)`; // décalage un peu plus petit pour le petit nuage
+        } else {
+            // Défilement vers le haut
+            document.querySelector('.big-cloud').style.transform = `translateX(${displacement}px)`;
+            document.querySelector('.little-cloud').style.transform = `translateX(${displacement * 0.7}px)`; // retour à droite
+        }
+
+        // Mettez à jour la dernière position de défilement
+        lastScrollPosition = scrollPosition;
+    });
+});
+
+
+
 
     
 
