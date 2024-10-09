@@ -172,8 +172,29 @@ span.title.koukaki {
     flex-direction: column;
   }
 }
-
-.txt-oscar {
+#oscar .txt-oscar {
   background-image: url("../../foce/assets/images/orange_characters_bg.png");
   font-size: 38px;
+}
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation ul {
+  display: none;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+.main-navigation {
+  display: flex;
+}
+
+.main-navigation .site-title {
+  width: 75%;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
