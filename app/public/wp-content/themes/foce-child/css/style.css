@@ -49,9 +49,15 @@
   animation: fadeInDown 2s ease-in-out forwards;
   animation-delay: 0.5s;
 }
+.banner img {
+  width: 100%;
+  margin: 0 auto;
+}
 .banner .parallax-logo {
   position: relative;
   z-index: 2;
+}
+.banner .float {
   animation: float 6s ease-in-out infinite;
 }
 
@@ -118,24 +124,22 @@ span.title.koukaki {
   transition-delay: 0.5s;
 }
 
-#characters {
+#story #characters {
   display: flex;
   flex-direction: column;
 }
-
-.swiper-container {
+#story #characters .swiper-container {
   max-width: 100%;
   margin: 0 auto;
   height: 400px;
 }
-
-.swiper-slide {
+#story #characters .swiper-container .swiper-slide {
   display: flex;
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
-  height: 100%;
+  width: 150px !important;
 }
 
 .story #place {
@@ -179,22 +183,22 @@ span.title.koukaki {
 
 /* Navigation
 --------------------------------------------- */
-.main-navigation ul {
-  display: none;
-}
-
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
 .main-navigation {
   display: flex;
 }
-
+.main-navigation .menu-toggle {
+  display: block;
+}
 .main-navigation .site-title {
   width: 75%;
   padding: 20px;
   margin: auto;
   text-align: center;
+}
+.main-navigation ul {
+  display: none;
+}
+.main-navigation.toggled ul {
+  display: block;
+  background-color: aqua;
 }/*# sourceMappingURL=style.css.map */

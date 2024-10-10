@@ -14,19 +14,17 @@
             while ($characters_query->have_posts()) {
                 $characters_query->the_post();
                 ?>
-                <div class="swiper-slide">
-                    <figure>
-                        <?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
-                        <figcaption><?php the_title(); ?></figcaption>
-                    </figure>
-                </div>
-            <?php
+                    <div class="swiper-slide">
+                        <figure>
+                            <?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
+                            <figcaption><?php the_title(); ?></figcaption>
+                        </figure>
+                    </div>
+                <?php
             }
             wp_reset_postdata();
             ?>
         </div>
-            <!-- Add Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            
     </div>
 </article>

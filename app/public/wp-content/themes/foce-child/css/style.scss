@@ -51,12 +51,20 @@
   opacity: 0; 
   animation: fadeInDown 2s ease-in-out forwards; 
   animation-delay: 0.5s; 
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
   
   .parallax-logo {
     position: relative;
-    z-index: 2; 
-    animation: float 6s ease-in-out infinite; 
-}
+    z-index: 2;
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
 }
 
 .story h2::before, .story__article::before {
@@ -127,24 +135,30 @@ span.title {
 
 //////Slider personnages//////
 
-#characters {
+#story {
+  
+  #characters {
   display: flex;
   flex-direction: column;
+
+  .swiper-container {
+    max-width: 100%; 
+    margin: 0 auto; 
+    height: 400px;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center; 
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      width:150px !important;
+    }
+  } 
 }
-.swiper-container {
-  max-width: 100%; 
-  margin: 0 auto; 
-  height: 400px;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center; 
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  height: 100%; 
-}
+
 
 
 ////////Lieu/////////
@@ -192,26 +206,28 @@ span.title {
 
 /* Navigation
 --------------------------------------------- */
-
-.main-navigation ul {
-	display: none;
-}
-
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
 .main-navigation {
   display: flex;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .site-title {
+      width: 75%;
+      padding: 20px;
+      margin: auto;
+      text-align: center;
+    }
+
+    ul {
+      display: none;
+    }
+    
+    &.toggled ul {
+      display: block;
+      background-color: aqua;
+    }
+
 }
-
-.main-navigation .site-title {
-  width: 75%;
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-}
-
-
 
