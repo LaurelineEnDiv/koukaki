@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         direction: 'horizontal',
         loop: true,
         slidesPerView: 3, 
-        spaceBetween: 30,
+        spaceBetween: 20,
         effect: "coverflow",
         grabCursor: true  
     });

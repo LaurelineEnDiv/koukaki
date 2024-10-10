@@ -42,6 +42,15 @@
     transform: translate(-5px, 5px);
   }
 }
+/* Animation rotation des fleurs */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .banner {
   position: relative;
   overflow: hidden;
@@ -67,15 +76,6 @@
   animation-delay: 0.5s;
 }
 
-/* Animation rotation des fleurs */
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 #studio h2::before,
 #studio h2::after,
 .site-footer::before,
@@ -100,7 +100,7 @@
   transform: translate(-50%, -50%);
   z-index: 1; /* Derrière le logo */
   -o-object-fit: cover;
-     object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .background-video {
@@ -108,7 +108,6 @@
   }
 }
 
-/* Animation des titres */
 span.title {
   display: inline-block; /* Permet d'animer l'élément de manière indépendante */
   opacity: 0;
@@ -124,6 +123,12 @@ span.title.koukaki {
   transition-delay: 0.5s;
 }
 
+#story {
+  /*.swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none !important;
+  }*/
+}
 #story #characters {
   display: flex;
   flex-direction: column;
@@ -136,10 +141,10 @@ span.title.koukaki {
 #story #characters .swiper-container .swiper-slide {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 0 30px;
   box-sizing: border-box;
   text-align: center;
-  width: 150px !important;
+  width: 300px !important;
 }
 
 .story #place {

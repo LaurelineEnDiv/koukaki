@@ -45,6 +45,16 @@
   }
 }
 
+/* Animation rotation des fleurs */
+@keyframes rotateFlower {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 .banner {
   position: relative;
   overflow: hidden; 
@@ -73,16 +83,6 @@
   animation-delay: 0.5s; 
 }
 
-/* Animation rotation des fleurs */
-@keyframes rotateFlower {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
-
 #studio h2::before, 
 #studio h2::after, 
 .site-footer::before, 
@@ -99,8 +99,6 @@
   animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
 }
 
-
-
 /* Vidéo */
 .background-video {
   position: absolute;
@@ -108,14 +106,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; /* Derrière le logo */
-  object-fit: cover; /* Pour s'assurer que la vidéo couvre tout le header */
+  object-fit: cover; 
 
   @media (max-width: 768px) {
         display: none;
   }
 }
 
-/* Animation des titres */
+//////// Animation des titres ////////
 span.title {
   display: inline-block; /* Permet d'animer l'élément de manière indépendante */
   opacity: 0;
@@ -141,27 +139,29 @@ span.title {
   display: flex;
   flex-direction: column;
 
-  .swiper-container {
-    max-width: 100%; 
-    margin: 0 auto; 
-    height: 400px;
+    .swiper-container {
+      max-width: 100%; 
+      margin: 0 auto; 
+      height: 400px;
 
-    .swiper-slide {
-      display: flex;
-      justify-content: center; 
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-      width:150px !important;
+      .swiper-slide {
+        display: flex;
+        justify-content: center; 
+        padding: 0 30px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 300px !important;
+      } 
     }
-  } 
+  }
+
+  /*.swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none !important;
+  }*//////
 }
-}
 
-
-
-
-////////Lieu/////////
+//////// Lieu /////////
 
 .story #place {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
