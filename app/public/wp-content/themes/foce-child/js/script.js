@@ -37,36 +37,29 @@
 //Déplacement des nuages
 document.addEventListener('DOMContentLoaded', function() {
     let lastScrollPosition = 0; // Dernière position de défilement
+    let bigCloud = 0; // Position courante de déplacement de big-cloud
+    let littleCloud = 0; // Position courante de déplacement de little-cloud
+
+    // Limites de déplacement (max 300px vers la gauche)
+    const maxDistance = 300;
 
     window.addEventListener('scroll', function() {
-        // Calcul de la position de défilement
-        let scrollPosition = window.scrollY; 
+        // Calcul de la nouvelle position de défilement
+        let scrollPosition = window.scrollY;
 
-        // Limite l'amplitude du déplacement (max 300px)
-        let maxDisplacement = 300;
+        // Calcul du changement de défilement par rapport à la dernière position
+        let scrollDelta = scrollPosition - lastScrollPosition;
 
-        // Calcul de la proportion du déplacement (300px max)
-        let displacement = Math.min(scrollPosition, maxDisplacement);
+        // Mettre à jour les positions des nuages en fonction du scroll
+        // Sens de scrollDelta pour déplacer à gauche vers le bas et à droite vers le haut
+        bigCloud = Math.max(0, Math.min(maxDistance, bigCloud + scrollDelta));
+        littleCloud = Math.max(0, Math.min(maxDistance, littleCloud + scrollDelta)); 
 
-        // Vérifiez si l'utilisateur fait défiler vers le bas ou vers le haut
-        if (scrollPosition > lastScrollPosition) {
-            // Défilement vers le bas
-            document.querySelector('.big-cloud').style.transform = `translateX(-${displacement}px)`;
-            document.querySelector('.little-cloud').style.transform = `translateX(-${displacement * 0.7}px)`; // décalage un peu plus petit pour le petit nuage
-        } else {
-            // Défilement vers le haut
-            document.querySelector('.big-cloud').style.transform = `translateX(${displacement}px)`;
-            document.querySelector('.little-cloud').style.transform = `translateX(${displacement * 0.7}px)`; // retour à droite
-        }
+        // Appliquer la transformation aux nuages
+        document.querySelector('.big-cloud').style.transform = `translateX(-${bigCloud}px)`;
+        document.querySelector('.little-cloud').style.transform = `translateX(-${littleCloud}px)`;
 
-        // Mettez à jour la dernière position de défilement
+        // Mettre à jour la dernière position de défilement
         lastScrollPosition = scrollPosition;
     });
 });
-
-
-
-
-    
-
-

@@ -161,7 +161,7 @@ span.title {
   }*//////
 }
 
-//////// Lieu /////////
+//////// Nuages /////////
 
 .story #place {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
@@ -172,7 +172,7 @@ span.title {
 .big-cloud, .little-cloud {
   position: absolute;
   filter: blur(10px);
-  transition: transform 4s ease-in-out;
+  transition: transform 2s ease-in-out;
 }
 
 .big-cloud {
@@ -185,7 +185,7 @@ span.title {
   right: 400px; 
 }
 
-/* Section ajoutée (Oscars) */
+///////// Section Oscars ///////////
 #oscar {
   > div {
     display: flex;

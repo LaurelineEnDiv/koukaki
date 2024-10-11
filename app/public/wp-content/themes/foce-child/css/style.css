@@ -156,7 +156,7 @@ span.title.koukaki {
 .big-cloud, .little-cloud {
   position: absolute;
   filter: blur(10px);
-  transition: transform 4s ease-in-out;
+  transition: transform 2s ease-in-out;
 }
 
 .big-cloud {
@@ -169,7 +169,6 @@ span.title.koukaki {
   right: 400px;
 }
 
-/* Section ajoutée (Oscars) */
 #oscar > div {
   display: flex;
   justify-content: center;
