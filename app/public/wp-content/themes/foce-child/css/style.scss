@@ -167,22 +167,23 @@ span.title {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   position: relative;
   overflow: hidden;
-}
 
-.big-cloud, .little-cloud {
-  position: absolute;
-  filter: blur(10px);
-  transition: transform 2s ease-in-out;
-}
+  .big-cloud, .little-cloud {
+    position: absolute;
+    filter: blur(10px);
+    transition: transform 2s ease-in-out;
+  }
+  
+  .big-cloud {
+    top: 60px;
+    right: 60px; 
+  }
+  
+  .little-cloud {
+    top: 230px; 
+    right: 400px; 
+  }
 
-.big-cloud {
-  top: 60px;
-  right: 60px; 
-}
-
-.little-cloud {
-  top: 230px; 
-  right: 400px; 
 }
 
 ///////// Section Oscars ///////////
@@ -208,6 +209,7 @@ span.title {
 --------------------------------------------- */
 .main-navigation {
   display: flex;
+  position: relative; /* Permet au menu d'être positionné par rapport au nav */
 
     .menu-toggle {
       display: block;
@@ -222,11 +224,27 @@ span.title {
 
     ul {
       display: none;
+      position: absolute; /* Positionné par rapport au parent .main-navigation */
+      width: 100%;  
+      height: auto;
+      top: 100%;  /* Le menu s'affiche juste en dessous du header */
+      left: 0;
+      background-color: #fff5e9;
+      margin: 0;
+      padding: 3em 0;
+      text-align: center;
+
+        li {
+          padding: 1em;
+          a {
+          font-size: 24px;
+          }
+        }
+
     }
     
     &.toggled ul {
       display: block;
-      background-color: aqua;
     }
 
 }

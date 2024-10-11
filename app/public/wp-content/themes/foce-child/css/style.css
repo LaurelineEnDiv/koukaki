@@ -152,19 +152,16 @@ span.title.koukaki {
   position: relative;
   overflow: hidden;
 }
-
-.big-cloud, .little-cloud {
+.story #place .big-cloud, .story #place .little-cloud {
   position: absolute;
   filter: blur(10px);
   transition: transform 2s ease-in-out;
 }
-
-.big-cloud {
+.story #place .big-cloud {
   top: 60px;
   right: 60px;
 }
-
-.little-cloud {
+.story #place .little-cloud {
   top: 230px;
   right: 400px;
 }
@@ -189,6 +186,7 @@ span.title.koukaki {
 --------------------------------------------- */
 .main-navigation {
   display: flex;
+  position: relative; /* Permet au menu d'être positionné par rapport au nav */
 }
 .main-navigation .menu-toggle {
   display: block;
@@ -201,8 +199,22 @@ span.title.koukaki {
 }
 .main-navigation ul {
   display: none;
+  position: absolute; /* Positionné par rapport au parent .main-navigation */
+  width: 100%;
+  height: auto;
+  top: 100%; /* Le menu s'affiche juste en dessous du header */
+  left: 0;
+  background-color: #fff5e9;
+  margin: 0;
+  padding: 3em 0;
+  text-align: center;
+}
+.main-navigation ul li {
+  padding: 1em;
+}
+.main-navigation ul li a {
+  font-size: 24px;
 }
 .main-navigation.toggled ul {
   display: block;
-  background-color: aqua;
 }/*# sourceMappingURL=style.css.map */
