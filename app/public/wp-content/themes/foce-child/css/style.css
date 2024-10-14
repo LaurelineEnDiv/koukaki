@@ -186,16 +186,44 @@ span.title.koukaki {
 --------------------------------------------- */
 .main-navigation {
   display: flex;
-  position: relative; /* Permet au menu d'être positionné par rapport au nav */
-}
-.main-navigation .menu-toggle {
-  display: block;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  /* Transformation des lignes en croix (état toggled) */
 }
 .main-navigation .site-title {
-  width: 75%;
-  padding: 20px;
-  margin: auto;
+  flex-grow: 1; /* Le titre prend tout l'espace disponible */
   text-align: center;
+  padding-left: 80px;
+}
+.main-navigation .menu-toggle, .main-navigation .toggled ul {
+  display: block;
+}
+.main-navigation button {
+  margin: inherit;
+}
+.main-navigation .menu-toggle {
+  position: relative;
+  padding-right: 80px;
+}
+.main-navigation .menu-toggle .line {
+  width: 40px;
+  height: 1px;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+}
+.main-navigation.toggled .menu-toggle .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px) !important; /* Première ligne devient la barre haute de la croix */
+  top: 50%;
+  translate: -50% -50%; /* Centrage vertical exact */
+}
+.main-navigation.toggled .menu-toggle .line:nth-child(2) {
+  opacity: 0 !important;
+}
+.main-navigation.toggled .menu-toggle .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px) !important; /* Troisième ligne devient la barre basse de la croix */
+  top: 50%;
+  translate: -50% -50%; /* Centrage vertical exact */
 }
 .main-navigation ul {
   display: none;
@@ -214,7 +242,4 @@ span.title.koukaki {
 }
 .main-navigation ul li a {
   font-size: 24px;
-}
-.main-navigation.toggled ul {
-  display: block;
 }/*# sourceMappingURL=style.css.map */

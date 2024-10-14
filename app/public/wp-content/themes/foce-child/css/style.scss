@@ -209,43 +209,71 @@ span.title {
 --------------------------------------------- */
 .main-navigation {
   display: flex;
-  position: relative; /* Permet au menu d'être positionné par rapport au nav */
+  align-items: center; 
+  justify-content: space-between; 
+  position: relative;
 
-    .menu-toggle {
-      display: block;
+  .site-title {
+    flex-grow: 1; /* Le titre prend tout l'espace disponible */
+    text-align: center;
+    padding-left: 80px;
+  }
+  
+  .menu-toggle, .toggled ul {
+    display: block;
+  }
+
+  button {
+    margin: inherit;
+  }
+
+  .menu-toggle {
+    position: relative;
+    padding-right: 80px;
+
+    .line {
+      width: 40px;
+      height: 1px;
+      margin-bottom: 6px;
+      transition: all 0.3s ease;
     }
+  }
 
-    .site-title {
-      width: 75%;
-      padding: 20px;
-      margin: auto;
-      text-align: center;
+  /* Transformation des lignes en croix (état toggled) */
+  &.toggled .menu-toggle .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important; /* Première ligne devient la barre haute de la croix */
+    top: 50%;
+    translate: -50% -50%; /* Centrage vertical exact */
+  }
+
+  &.toggled .menu-toggle .line:nth-child(2) {
+    opacity: 0 !important; 
+  }
+
+  &.toggled .menu-toggle .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px) !important; /* Troisième ligne devient la barre basse de la croix */
+    top: 50%;
+    translate: -50% -50%; /* Centrage vertical exact */
+  }
+
+  ul {
+    display: none;
+    position: absolute; /* Positionné par rapport au parent .main-navigation */
+    width: 100%;  
+    height: auto;
+    top: 100%;  /* Le menu s'affiche juste en dessous du header */
+    left: 0;
+    background-color: #fff5e9;
+    margin: 0;
+    padding: 3em 0;
+    text-align: center;
+
+    li {
+      padding: 1em;
+      a {
+        font-size: 24px;
+      }
     }
-
-    ul {
-      display: none;
-      position: absolute; /* Positionné par rapport au parent .main-navigation */
-      width: 100%;  
-      height: auto;
-      top: 100%;  /* Le menu s'affiche juste en dessous du header */
-      left: 0;
-      background-color: #fff5e9;
-      margin: 0;
-      padding: 3em 0;
-      text-align: center;
-
-        li {
-          padding: 1em;
-          a {
-          font-size: 24px;
-          }
-        }
-
-    }
-    
-    &.toggled ul {
-      display: block;
-    }
-
+  }
 }
 
