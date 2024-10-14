@@ -68,17 +68,48 @@
     background-color: #fff5e9;
     text-align: center;
 
+    &::before {
+      content: url("../assets/images/menu-toggle/orchid.png");
+      position: absolute;
+      left: 0;
+      top: 4em;
+    }
+
+    &::after {
+      content: url("../assets/images/menu-toggle/random-flower.png");
+      position: absolute;
+      right: 0;
+      top: 40%;
+    }
+
     li {
       padding: 1.5em 0;
-      a {
-        font-size: 34px;
+        &:first-child::before {
+          content: url("../assets/images/menu-toggle/flower.png");
+          position: absolute;
+          left: 20%;
+          top: 200%;
       }
+        &:first-child::after {
+          content: url("../assets/images/menu-toggle/sunflower.png");
+          position: absolute;
+          right: 6em;
+          top: 4em;
+      }
+        a {
+          font-size: 34px;
+        }
     }
-  }
 
-  
+    .flower-hibiscus {
+      content: url("../assets/images/menu-toggle/hibiscus.png");
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+  }  
 }
-
 
 /* BANNER
 --------------------------------------------- */
