@@ -39,6 +39,10 @@
                 <li><a href="#characters">Personnages</a></li>
                 <li><a href="#place">Lieu</a></li>
                 <li><a href="#studio">Studio Koukaki</a></li>
+                <span class="cat-purple"></span>
+                <span class="cat-yellow"></span>
+                <span class="cat-black"></span>
+                <span class="studio-koukaki"></span>
                 <span class="flower-hibiscus"></span>
             </ul>
 

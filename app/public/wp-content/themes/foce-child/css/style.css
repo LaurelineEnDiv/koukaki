@@ -55,7 +55,7 @@
   display: none;
   position: absolute;
   width: 100%;
-  min-height: 806px;
+  min-height: 700px;
   top: 100%; /* Le menu s'affiche juste en dessous du header */
   background-color: #fff5e9;
   text-align: center;
@@ -73,7 +73,7 @@
   top: 40%;
 }
 .main-navigation ul li {
-  padding: 1.5em 0;
+  padding: 1.2em 0;
 }
 .main-navigation ul li:first-child::before {
   content: url("../assets/images/menu-toggle/flower.png");
@@ -88,7 +88,32 @@
   top: 4em;
 }
 .main-navigation ul li a {
-  font-size: 34px;
+  font-size: 32px;
+}
+.main-navigation ul .cat-purple {
+  content: url("../assets/images/menu-toggle/purple-cat.png");
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+.main-navigation ul .cat-yellow {
+  content: url("../assets/images/menu-toggle/yellow-cat.png");
+  position: absolute;
+  left: 8%;
+  top: 75%;
+}
+.main-navigation ul .cat-black {
+  content: url("../assets/images/menu-toggle/black-cat.png");
+  position: absolute;
+  right: 15%;
+  top: 45%;
+}
+.main-navigation ul .studio-koukaki {
+  content: url("../assets/images/menu-toggle/studio-koukaki.png");
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .main-navigation ul .flower-hibiscus {
   content: url("../assets/images/menu-toggle/hibiscus.png");

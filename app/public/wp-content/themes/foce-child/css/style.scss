@@ -63,7 +63,7 @@
     display: none;
     position: absolute; 
     width: 100%;  
-    min-height: 806px;
+    min-height: 700px;
     top: 100%;  /* Le menu s'affiche juste en dessous du header */
     background-color: #fff5e9;
     text-align: center;
@@ -83,22 +83,53 @@
     }
 
     li {
-      padding: 1.5em 0;
+      padding: 1.2em 0;
+
         &:first-child::before {
           content: url("../assets/images/menu-toggle/flower.png");
           position: absolute;
           left: 20%;
           top: 200%;
-      }
+        }
         &:first-child::after {
           content: url("../assets/images/menu-toggle/sunflower.png");
           position: absolute;
           right: 6em;
           top: 4em;
-      }
-        a {
-          font-size: 34px;
         }
+
+        a {
+          font-size: 32px;
+        }
+    }
+
+    .cat-purple {
+      content: url("../assets/images/menu-toggle/purple-cat.png");
+      position: absolute;
+      left: 20%;
+      top: 20%;
+    }
+
+    .cat-yellow {
+      content: url("../assets/images/menu-toggle/yellow-cat.png");
+      position: absolute;
+      left: 8%;
+      top: 75%;
+    }
+
+    .cat-black {
+      content: url("../assets/images/menu-toggle/black-cat.png");
+      position: absolute;
+      right: 15%;
+      top: 45%;
+    }
+
+    .studio-koukaki {
+      content: url("../assets/images/menu-toggle/studio-koukaki.png");
+      position: absolute;
+      bottom : 5%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .flower-hibiscus {
