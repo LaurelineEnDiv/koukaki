@@ -8,204 +8,7 @@
  Version: 0.1
  */
 
- /* Animation fade-in descendant */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-100px); 
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-}
-
-/* Animation fade-in ascendant */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(100px); 
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-}
-
-/* Animation de flottement du logo */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  20%, 60% {
-    transform: translate(5px, -5px);
-  }
-  40%, 80% {
-    transform: translate(-5px, 5px);
-  }
-}
-
-/* Animation rotation des fleurs */
-@keyframes rotateFlower {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
-
-.banner {
-  position: relative;
-  overflow: hidden; 
-  opacity: 0; 
-  animation: fadeInDown 2s ease-in-out forwards; 
-  animation-delay: 0.5s; 
-
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .parallax-logo {
-    position: relative;
-    z-index: 2;
-  }
-
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-}
-
-.story h2::before, .story__article::before {
-  opacity: 0;
-  animation: fadeInUp 2s ease-in-out forwards;
-  animation-delay: 0.5s; 
-}
-
-#studio h2::before, 
-#studio h2::after, 
-.site-footer::before, 
-.site-footer::after, 
-.site-footer ul::after {
-    animation: rotateFlower 15s infinite linear;
-    animation-delay: 2s;
-}
-
-/* Animation fadeInUp + rotate */
-.story__article::after, 
-.story h2::after {
-  opacity: 0;
-  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
-}
-
-/* Vidéo */
-.background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; /* Derrière le logo */
-  object-fit: cover; 
-
-  @media (max-width: 768px) {
-        display: none;
-  }
-}
-
-//////// Animation des titres ////////
-span.title {
-  display: inline-block; /* Permet d'animer l'élément de manière indépendante */
-  opacity: 0;
-  transform: translateY(100px); /* Le titre est positionné 80px plus bas */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-
-  &.show {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-
-  &.koukaki {
-    transition: opacity 2s ease-out, transform 2s ease-out; 
-    transition-delay: 0.5s; 
-  }
-}
-
-//////Slider personnages//////
-
-#story {
-  
-  #characters {
-  display: flex;
-  flex-direction: column;
-
-    .swiper-container {
-      max-width: 100%; 
-      margin: 0 auto; 
-      height: 400px;
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center; 
-        padding: 0 30px;
-        box-sizing: border-box;
-        text-align: center;
-        width: 300px !important;
-      } 
-    }
-  }
-
-  /*.swiper-3d .swiper-slide-shadow-left,
-  .swiper-3d .swiper-slide-shadow-right {
-    background-image: none !important;
-  }*//////
-}
-
-//////// Nuages /////////
-
-.story #place {
-  background-image: url("../assets/images/Studio_Koukaki-image_place.png");
-  position: relative;
-  overflow: hidden;
-
-  .big-cloud, .little-cloud {
-    position: absolute;
-    filter: blur(10px);
-    transition: transform 2s ease-in-out;
-  }
-  
-  .big-cloud {
-    top: 60px;
-    right: 60px; 
-  }
-  
-  .little-cloud {
-    top: 230px; 
-    right: 400px; 
-  }
-
-}
-
-///////// Section Oscars ///////////
-#oscar {
-  > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5em;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-
-  .txt-oscar {
-    background-image: url("../../foce/assets/images/orange_characters_bg.png");
-    font-size: 38px;
-  }
-}
-
-/* Navigation
+ /* Navigation
 --------------------------------------------- */
 .main-navigation {
   display: flex;
@@ -258,22 +61,174 @@ span.title {
 
   ul {
     display: none;
-    position: absolute; /* Positionné par rapport au parent .main-navigation */
+    position: absolute; 
     width: 100%;  
-    height: auto;
+    min-height: 806px;
     top: 100%;  /* Le menu s'affiche juste en dessous du header */
-    left: 0;
     background-color: #fff5e9;
-    margin: 0;
-    padding: 3em 0;
     text-align: center;
 
     li {
-      padding: 1em;
+      padding: 1.5em 0;
       a {
-        font-size: 24px;
+        font-size: 34px;
       }
     }
   }
+
+  
 }
 
+
+/* BANNER
+--------------------------------------------- */
+.banner {
+  position: relative;
+  overflow: hidden; 
+  opacity: 0; 
+  animation: fadeInDown 2s ease-in-out forwards; 
+  animation-delay: 0.5s; 
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .parallax-logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Derrière le logo */
+    object-fit: cover; 
+
+    @media (max-width: 768px) {
+          display: none;
+    }
+  } 
+}
+
+/* Content
+--------------------------------------------- */
+.story h2::before, .story__article::before {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 0.5s; 
+}
+
+#studio h2::before, 
+#studio h2::after, 
+.site-footer::before, 
+.site-footer::after, 
+.site-footer ul::after {
+    animation: rotateFlower 15s infinite linear;
+    animation-delay: 2s;
+}
+
+/* Animation fadeInUp + rotate */
+.story__article::after, 
+.story h2::after {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
+}
+
+/* Animation des titres */
+span.title {
+  display: inline-block; /* Permet d'animer l'élément de manière indépendante */
+  opacity: 0;
+  transform: translateY(100px); /* Le titre est positionné 80px plus bas */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+
+  &.koukaki {
+    transition: opacity 2s ease-out, transform 2s ease-out; 
+    transition-delay: 0.5s; 
+  }
+}
+
+/* Slider Characters
+--------------------------------------------- */
+#story {
+  
+  #characters {
+  display: flex;
+  flex-direction: column;
+
+    .swiper-container {
+      max-width: 100%; 
+      margin: 0 auto; 
+      height: 400px;
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center; 
+        padding: 0 30px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 300px !important;
+      } 
+    }
+  }
+
+  /*.swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none !important;
+  }*//////
+}
+
+/* Animation nuages
+--------------------------------------------- */
+.story #place {
+  background-image: url("../assets/images/clouds/Studio_Koukaki-image_place.png");
+  position: relative;
+  overflow: hidden;
+
+  .big-cloud, .little-cloud {
+    position: absolute;
+    filter: blur(10px);
+    transition: transform 2s ease-in-out;
+  }
+  
+  .big-cloud {
+    top: 60px;
+    right: 60px; 
+  }
+  
+  .little-cloud {
+    top: 230px; 
+    right: 400px; 
+  }
+
+}
+
+/* Section Oscars
+--------------------------------------------- */
+#oscar {
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .txt-oscar {
+    background-image: url("/wp-content/themes/foce/assets/images/orange_characters_bg.png");
+    font-size: 38px;
+  }}

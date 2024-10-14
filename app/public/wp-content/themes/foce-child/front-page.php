@@ -20,8 +20,8 @@ get_header();
             </article>
             <?php get_template_part('template-parts/characters-slider'); ?>
             <article id="place">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>" class="big-cloud">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?>" class="little-cloud">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/clouds/big_cloud.png'; ?>" class="big-cloud">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/clouds/little_cloud.png'; ?>" class="little-cloud">
                 <div>
                     <h3><span class="title">Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>

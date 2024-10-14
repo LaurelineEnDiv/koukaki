@@ -34,6 +34,7 @@
                 <span class="line"></span>
             </button>
             <ul>
+                <li><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/menu-toggle/logo-menu.png'; ?>" alt="logo Fleurs d'oranger & chats errants" class="float"></li>
                 <li><a href="#story">Histoire</a></li>
                 <li><a href="#characters">Personnages</a></li>
                 <li><a href="#place">Lieu</a></li>
