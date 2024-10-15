@@ -12,6 +12,7 @@
 --------------------------------------------- */
 .main-navigation {
   display: flex;
+  box-sizing: border-box;
   align-items: center; 
   justify-content: space-between; 
   position: relative;
@@ -63,23 +64,23 @@
     display: none;
     position: absolute; 
     width: 100%;  
-    min-height: 700px;
+    min-height: 806px;
     top: 100%;  /* Le menu s'affiche juste en dessous du header */
     background-color: #fff5e9;
     text-align: center;
 
     &::before {
-      content: url("../assets/images/menu-toggle/orchid.png");
+      content: url("/wp-content/themes/foce/assets/images/orchid.png");
       position: absolute;
-      left: 0;
+      left: -5%;
       top: 4em;
     }
 
     &::after {
-      content: url("../assets/images/menu-toggle/random-flower.png");
+      content: url("/wp-content/themes/foce/assets/images/random_flower.png");
       position: absolute;
-      right: 0;
-      top: 40%;
+      right: -8%;
+      top: 30%;
     }
 
     li {
@@ -99,7 +100,7 @@
         }
 
         a {
-          font-size: 32px;
+          font-size: 36px;
         }
     }
 
@@ -127,16 +128,17 @@
     .studio-koukaki {
       content: url("../assets/images/menu-toggle/studio-koukaki.png");
       position: absolute;
-      bottom : 5%;
+      bottom : 8%;
       left: 50%;
       transform: translateX(-50%);
     }
 
     .flower-hibiscus {
-      content: url("../assets/images/menu-toggle/hibiscus.png");
+      content: url("/wp-content/themes/foce/assets/images/hibiscus_footer.png");
       position: absolute;
-      right: 0;
-      bottom: 0;
+      overflow: hidden;
+      right: -30%;
+      bottom: -45%;
     }
 
   }  
@@ -179,31 +181,39 @@
   } 
 }
 
-/* Content
+/* Animations Content
 --------------------------------------------- */
+
+//////// Fade in Up ///////////
 .story h2::before, .story__article::before {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards;
   animation-delay: 0.5s; 
 }
 
+//////// Rotate Flowers ///////////
 #studio h2::before, 
 #studio h2::after, 
 .site-footer::before, 
 .site-footer::after, 
-.site-footer ul::after {
+.site-footer ul::after,
+.main-navigation .flower-hibiscus,
+.main-navigation ul::before,
+.main-navigation ul::after,
+.main-navigation ul li:first-child::before,
+.main-navigation ul li:first-child::after {
     animation: rotateFlower 15s infinite linear;
     animation-delay: 2s;
 }
 
-/* Animation fadeInUp + rotate */
+//////// Rotate Flowers + FadeInUp /////////
 .story__article::after, 
 .story h2::after {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
 }
 
-/* Animation des titres */
+/////////// Titres //////////
 span.title {
   display: inline-block; /* Permet d'animer l'élément de manière indépendante */
   opacity: 0;
