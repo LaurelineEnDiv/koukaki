@@ -12,7 +12,6 @@
 --------------------------------------------- */
 .main-navigation {
   display: flex;
-  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -55,6 +54,7 @@
 .main-navigation ul {
   display: none;
   position: absolute;
+  overflow: hidden;
   width: 100%;
   min-height: 806px;
   top: 100%; /* Le menu s'affiche juste en dessous du header */
@@ -68,13 +68,19 @@
   top: 4em;
 }
 .main-navigation ul::after {
-  content: url("/wp-content/themes/foce/assets/images/random_flower.png");
+  content: "";
   position: absolute;
-  right: -8%;
+  right: -4%;
   top: 30%;
+  width: 75px;
+  height: 75px;
+  background-image: url("/wp-content/themes/foce/assets/images/random_flower.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .main-navigation ul li {
   padding: 1.2em 0;
+  z-index: 1;
 }
 .main-navigation ul li:first-child::before {
   content: url("../assets/images/menu-toggle/flower.png");
@@ -90,6 +96,9 @@
 }
 .main-navigation ul li a {
   font-size: 36px;
+}
+.main-navigation ul li a a:hover {
+  text-shadow: 0px 0px 14px 0px #FF5C00 !important;
 }
 .main-navigation ul .cat-purple {
   content: url("../assets/images/menu-toggle/purple-cat.png");
@@ -115,13 +124,18 @@
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 .main-navigation ul .flower-hibiscus {
-  content: url("/wp-content/themes/foce/assets/images/hibiscus_footer.png");
+  content: "";
   position: absolute;
-  overflow: hidden;
+  width: 626px;
+  height: 626px;
+  background-image: url("/wp-content/themes/foce/assets/images/hibiscus_footer.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   right: -30%;
-  bottom: -45%;
+  bottom: -35%;
 }
 
 /* BANNER
@@ -140,9 +154,6 @@
 .banner .parallax-logo {
   position: relative;
   z-index: 2;
-}
-.banner .float {
-  animation: float 6s ease-in-out infinite;
 }
 .banner .background-video {
   position: absolute;
@@ -185,6 +196,10 @@
 .story h2::after {
   opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 
 span.title {

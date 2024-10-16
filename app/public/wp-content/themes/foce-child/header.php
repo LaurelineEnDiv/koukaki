@@ -34,14 +34,14 @@
                 <span class="line"></span>
             </button>
             <ul>
-                <li><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/menu-toggle/logo-menu.png'; ?>" alt="logo Fleurs d'oranger & chats errants" class="float"></li>
+                <li><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/menu-toggle/logo-menu.png'; ?>" alt="logo Fleurs d'oranger & chats errants"></li>
                 <li><a href="#story">Histoire</a></li>
                 <li><a href="#characters">Personnages</a></li>
                 <li><a href="#place">Lieu</a></li>
                 <li><a href="#studio">Studio Koukaki</a></li>
-                <span class="cat-purple"></span>
-                <span class="cat-yellow"></span>
-                <span class="cat-black"></span>
+                <span class="cat-purple float"></span>
+                <span class="cat-yellow float"></span>
+                <span class="cat-black float"></span>
                 <span class="studio-koukaki"></span>
                 <span class="flower-hibiscus"></span>
             </ul>
