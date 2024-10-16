@@ -1,11 +1,7 @@
-//Déclencher l'animation des titres à leur apparition
-
-    document.addEventListener("DOMContentLoaded", function () {
-        // Sélectionner tous les titres 
-        const titles = document.querySelectorAll("span.title");
-    
-        // Créer un IntersectionObserver
-        const observer = new IntersectionObserver((entries, observer) => {
+//////// Animation des titres à leur apparition /////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const titles = document.querySelectorAll("span.title");
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
             // Ajouter la classe "show" quand l'élément entre dans le viewport
@@ -16,29 +12,28 @@
                 entry.target.classList.remove('show');
             }
         });
-        }, { threshold: 0.1 }); // L'élément est considéré comme visible à 10% de son apparition
+    }); 
     
-        // Appliquer l'observer à chaque titre
-        titles.forEach(title => {
+    // Appliquer l'observer à chaque titre
+    titles.forEach(title => {
         observer.observe(title);
-        });
     });
+});
 
-//Créer un effet de parallaxe avec le logo au scroll
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        window.addEventListener('scroll', function() {
-          const scrollPosition = window.scrollY; 
-          const logo = document.querySelector('.parallax-logo');
-          logo.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
-        });
-      });
+////////////  Logo Parallaxe au scroll /////////////////////  
+document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY; 
+        const logo = document.querySelector('.parallax-logo');
+        logo.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+    });
+});
 
-//Déplacement des nuages
+////////////// Déplacement des nuages au scroll /////////////////////////
 document.addEventListener('DOMContentLoaded', function() {
     let lastScrollPosition = 0; // Dernière position de défilement
-    let bigCloud = 0; // Position courante de déplacement de big-cloud
-    let littleCloud = 0; // Position courante de déplacement de little-cloud
+    let bigCloud = 0; 
+    let littleCloud = 0; 
 
     // Limites de déplacement (max 300px vers la gauche)
     const maxDistance = 300;
@@ -63,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollPosition = scrollPosition;
     });
 });
+
 
 
 

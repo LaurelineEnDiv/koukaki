@@ -63,6 +63,8 @@
     display: none;
     position: absolute; 
     overflow: hidden;
+    opacity: 0; 
+    animation: fadeInDown 1.5s ease-in-out forwards;
     width: 100%;  
     min-height: 806px;
     top: 100%;  /* Le menu s'affiche juste en dessous du header */
@@ -114,6 +116,7 @@
         }
     }
 
+    /////// Déco background chats + Hibiscus + Studio Koukaki /////////
     .cat-purple {
       content: url("../assets/images/menu-toggle/purple-cat.png");
       position: absolute;
@@ -192,7 +195,7 @@
   } 
 }
 
-/* Animations Content
+/* Animations 
 --------------------------------------------- */
 
 //////// Fade in Up ///////////

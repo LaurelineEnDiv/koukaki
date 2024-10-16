@@ -55,6 +55,8 @@
   display: none;
   position: absolute;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeInDown 1.5s ease-in-out forwards;
   width: 100%;
   min-height: 806px;
   top: 100%; /* Le menu s'affiche juste en dessous du header */
@@ -170,7 +172,7 @@
   }
 }
 
-/* Animations Content
+/* Animations 
 --------------------------------------------- */
 .story h2::before, .story__article::before {
   opacity: 0;
