@@ -17,6 +17,11 @@
   position: relative;
   /* Transformation des lignes en croix (état toggled) */
 }
+@media (max-width: 768px) {
+  .main-navigation {
+    padding: 1em;
+  }
+}
 .main-navigation .site-title {
   flex-grow: 1; /* Le titre prend tout l'espace disponible */
   text-align: center;
@@ -31,6 +36,16 @@
 .main-navigation .menu-toggle {
   position: relative;
   padding-right: 80px;
+}
+@media (max-width: 768px) {
+  .main-navigation .menu-toggle {
+    padding-right: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .main-navigation .menu-toggle {
+    padding-right: 20px;
+  }
 }
 .main-navigation .menu-toggle .line {
   width: 40px;
@@ -58,6 +73,8 @@
   opacity: 0;
   animation: fadeInDown 1.5s ease-in-out forwards;
   width: 100%;
+  left: 0; /* S'assurer que le menu commence à gauche */
+  right: 0; /* S'assurer que le menu s'étend jusqu'à la droite */
   min-height: 806px;
   top: 100%; /* Le menu s'affiche juste en dessous du header */
   background-color: #fff5e9;
@@ -274,18 +291,23 @@ span.title.koukaki {
 
 /* Section Oscars
 --------------------------------------------- */
-#oscar > div {
+#oscar .oscar-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5em;
+  margin-top: 3em;
 }
 @media (max-width: 768px) {
-  #oscar > div {
+  #oscar .oscar-container {
     flex-direction: column;
   }
 }
-#oscar .txt-oscar {
+#oscar .oscar-container .txt-oscar {
   background-image: url("/wp-content/themes/foce/assets/images/orange_characters_bg.png");
   font-size: 38px;
+}
+@media (max-width: 950px) {
+  #oscar .oscar-container .txt-oscar {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=style.css.map */
