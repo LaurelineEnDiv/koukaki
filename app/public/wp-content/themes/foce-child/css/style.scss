@@ -93,6 +93,14 @@
     li {
       padding: 1.2em 0;
       z-index: 1;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
         &:first-child::before {
           content: url("../assets/images/menu-toggle/flower.png");
@@ -110,11 +118,12 @@
         a {
           font-size: 36px;
           
-            a:hover {
-              text-shadow: 0px 0px 14px 0px #FF5C00 !important;
-            }
+            &:hover {
+              color:black;
+              text-shadow: 0px 0px 6px #FF5C00;
+            }  
         }
-    }
+      }
 
     /////// Déco background chats + Hibiscus + Studio Koukaki /////////
     .cat-purple {
@@ -234,9 +243,9 @@
 
 /////////// Titres //////////
 span.title {
-  display: inline-block; /* Permet d'animer l'élément de manière indépendante */
+  display: inline-block; 
   opacity: 0;
-  transform: translateY(100px); /* Le titre est positionné 80px plus bas */
+  transform: translateY(100px); 
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 
   &.show {
@@ -249,6 +258,8 @@ span.title {
     transition-delay: 0.5s; 
   }
 }
+
+
 
 /* Slider Characters
 --------------------------------------------- */
@@ -274,10 +285,10 @@ span.title {
     }
   }
 
-  /*.swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-left,
   .swiper-3d .swiper-slide-shadow-right {
-    background-image: none !important;
-  }*//////
+    background-image: none ;
+  }
 }
 
 /* Animation nuages

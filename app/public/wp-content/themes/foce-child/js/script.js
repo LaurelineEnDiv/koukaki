@@ -1,4 +1,4 @@
-//////// Animation des titres à leur apparition /////////////
+//////// Animation des titres (H2) à leur apparition /////////////
 document.addEventListener("DOMContentLoaded", function () {
     const titles = document.querySelectorAll("span.title");
     const observer = new IntersectionObserver((entries, observer) => {
@@ -13,10 +13,40 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }); 
-    
+
     // Appliquer l'observer à chaque titre
     titles.forEach(title => {
         observer.observe(title);
+        });
+});
+
+//////// Animation des liens de menu au clic sur le bouton meu-toggle /////////////
+document.addEventListener('DOMContentLoaded', function() {
+    const siteNavigation = document.getElementById('site-navigation');
+    const menuToggle = siteNavigation.querySelector('.menu-toggle');
+    const menu = siteNavigation.querySelector('ul');
+    const menuItems = menu.querySelectorAll('li');
+
+    // Fonction pour animer les items du menu avec un délai progressif
+    function animateMenuItems() {
+        menuItems.forEach((item, index) => {
+            // Retire toute animation précédente
+            item.classList.remove('show');
+            item.style.transitionDelay = ''; // Réinitialisation du délai
+
+            // Ajoute un délai progressif pour chaque élément
+            setTimeout(() => {
+                item.classList.add('show');
+                item.style.transitionDelay = `${index * 0.3}s`; // Délai de 300ms entre chaque item
+            }, index * 300); // Délai de 300ms pour l'animation de chaque item
+        });
+    }
+
+    // Déclencher l'animation au clic sur le bouton du menu
+    menuToggle.addEventListener('click', function() {
+        if (siteNavigation.classList.contains('toggled')) {
+            animateMenuItems(); 
+        } 
     });
 });
 
