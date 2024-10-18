@@ -261,7 +261,7 @@ span.title.koukaki {
 .story #place .big-cloud, .story #place .little-cloud {
   position: absolute;
   filter: blur(10px);
-  transition: transform 2s ease-in-out;
+  transition: transform 3s ease-in-out;
 }
 .story #place .big-cloud {
   top: 60px;

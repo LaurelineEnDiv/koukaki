@@ -1,26 +1,4 @@
-//////// Animation des titres (H2) à leur apparition /////////////
-document.addEventListener("DOMContentLoaded", function () {
-    const titles = document.querySelectorAll("span.title");
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            // Ajouter la classe "show" quand l'élément entre dans le viewport
-            entry.target.classList.add("show");
-            }
-            else {
-                // Retirer la classe "show" quand l'élément sort du viewport
-                entry.target.classList.remove('show');
-            }
-        });
-    }); 
-
-    // Appliquer l'observer à chaque titre
-    titles.forEach(title => {
-        observer.observe(title);
-        });
-});
-
-//////// Animation des liens de menu au clic sur le bouton meu-toggle /////////////
+//////// Effet d'apparition des liens de menu au clic sur le bouton menu-toggle /////////////
 document.addEventListener('DOMContentLoaded', function() {
     const siteNavigation = document.getElementById('site-navigation');
     const menuToggle = siteNavigation.querySelector('.menu-toggle');
@@ -50,6 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//////// Effet d'apparition des titres (H2) des sections /////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const titles = document.querySelectorAll("span.title");
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            // Ajouter la classe "show" quand l'élément entre dans le viewport
+            entry.target.classList.add("show");
+            }
+            else {
+                // Retirer la classe "show" quand l'élément sort du viewport
+                entry.target.classList.remove('show');
+            }
+        });
+    }); 
+
+    // Appliquer l'observer à chaque titre
+    titles.forEach(title => {
+        observer.observe(title);
+        });
+});
+
+
 ////////////  Logo Parallaxe au scroll /////////////////////  
 document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
@@ -61,34 +62,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ////////////// Déplacement des nuages au scroll /////////////////////////
 document.addEventListener('DOMContentLoaded', function() {
-    let lastScrollPosition = 0; // Dernière position de défilement
-    let bigCloud = 0; 
-    let littleCloud = 0; 
-
+    // Sélectionner les nuages et la section à observer
+    const bigCloud = document.querySelector('.big-cloud');
+    const littleCloud = document.querySelector('.little-cloud');
+    const placeSection = document.querySelector('#place');
+    
     // Limites de déplacement (max 300px vers la gauche)
     const maxDistance = 300;
+    let lastScrollPosition = 0;
+    let bigCloudPos = 0;
+    let littleCloudPos = 0;
 
-    window.addEventListener('scroll', function() {
-        // Calcul de la nouvelle position de défilement
+    // Fonction qui gère le défilement et le déplacement des nuages
+    const onScroll = () => {
         let scrollPosition = window.scrollY;
-
-        // Calcul du changement de défilement par rapport à la dernière position
         let scrollDelta = scrollPosition - lastScrollPosition;
+        
+        // Calculer les nouvelles positions des nuages
+        bigCloudPos = Math.max(0, Math.min(maxDistance, bigCloudPos + scrollDelta));
+        littleCloudPos = Math.max(0, Math.min(maxDistance, littleCloudPos + scrollDelta));
 
-        // Mettre à jour les positions des nuages en fonction du scroll
-        // Sens de scrollDelta pour déplacer à gauche vers le bas et à droite vers le haut
-        bigCloud = Math.max(0, Math.min(maxDistance, bigCloud + scrollDelta));
-        littleCloud = Math.max(0, Math.min(maxDistance, littleCloud + scrollDelta)); 
-
-        // Appliquer la transformation aux nuages
-        document.querySelector('.big-cloud').style.transform = `translateX(-${bigCloud}px)`;
-        document.querySelector('.little-cloud').style.transform = `translateX(-${littleCloud}px)`;
-
-        // Mettre à jour la dernière position de défilement
+        // Appliquer la transformation des nuages
+        bigCloud.style.transform = `translateX(-${bigCloudPos}px)`;
+        littleCloud.style.transform = `translateX(-${littleCloudPos}px)`;
         lastScrollPosition = scrollPosition;
+    };
+
+    // Créer l'observer avec une fonction de callback
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si la section #place est visible, activer l'événement de scroll
+                window.addEventListener('scroll', onScroll);
+            } else {
+                // Si la section n'est plus visible, désactiver l'événement de scroll
+                window.removeEventListener('scroll', onScroll);
+            }
+        });
     });
+
+    // Observer la section avec les nuages
+    observer.observe(placeSection);
 });
-
-
-
-
