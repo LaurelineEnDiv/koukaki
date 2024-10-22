@@ -1,11 +1,7 @@
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
- Theme URI: https://www.koukaki.local
- Author: Studio Koukaki
- Author URI: https://www.koukaki.local
  Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
- Version: 0.1
+ Description: Thème enfant
  */
 
  /* Navigation
@@ -37,6 +33,8 @@
   .menu-toggle {
     position: relative;
     padding-right: 80px;
+    width: 40px;
+    height: 24px;
 
     @media (max-width: 768px) {
       padding-right: 40px;
@@ -49,6 +47,8 @@
     .line {
       width: 40px;
       height: 1px;
+      min-width: 40px;
+      min-height: 1px;
       margin-bottom: 6px;
       transition: all 0.3s ease;
     }
@@ -56,17 +56,17 @@
 
   /* Transformation des lignes en croix (état toggled) */
   &.toggled .menu-toggle .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px) !important; /* Première ligne devient la barre haute de la croix */
+    transform: rotate(45deg) translate(5px, 5px); /* Première ligne devient la barre haute de la croix */
     top: 50%;
     translate: -50% -50%; /* Centrage vertical exact */
   }
 
   &.toggled .menu-toggle .line:nth-child(2) {
-    opacity: 0 !important; 
+    opacity: 0 ; 
   }
 
   &.toggled .menu-toggle .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px) !important; /* Troisième ligne devient la barre basse de la croix */
+    transform: rotate(-45deg) translate(5px, -5px); /* Troisième ligne devient la barre basse de la croix */
     top: 50%;
     translate: -50% -50%; /* Centrage vertical exact */
   }
@@ -190,10 +190,8 @@
 .banner {
   position: relative;
   overflow: hidden; 
-  opacity: 0; 
   animation: fadeInDown 2s ease-in-out forwards; 
-  animation-delay: 0.5s; 
-
+  
   img {
     width: 100%;
     margin: 0 auto;
@@ -223,9 +221,7 @@
 
 //////// Fade in Up ///////////
 .story h2::before, .story__article::before {
-  opacity: 0;
   animation: fadeInUp 2s ease-in-out forwards;
-  animation-delay: 0.5s; 
 }
 
 //////// Rotate Flowers ///////////
@@ -240,14 +236,12 @@
 .main-navigation ul li:first-child::before,
 .main-navigation ul li:first-child::after {
     animation: rotateFlower 15s infinite linear;
-    animation-delay: 2s;
 }
 
 //////// Rotate Flowers + FadeInUp /////////
 .story__article::after, 
 .story h2::after {
-  opacity: 0;
-  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s infinite linear;
+  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s linear infinite;
 }
 
 //////// Flottement /////////
@@ -260,20 +254,16 @@ span.title {
   display: inline-block; 
   opacity: 0;
   transform: translateY(100px); 
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 
   &.show {
-    opacity: 1;
-    transform: translateY(0); 
+    animation: fadeInUp 1.5s ease-out forwards;
   }
 
-  &.koukaki {
-    transition: opacity 2s ease-out, transform 2s ease-out; 
-    transition-delay: 0.5s; 
+  &.koukaki.show {
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 0.5s; 
   }
 }
-
-
 
 /* Slider Characters
 --------------------------------------------- */

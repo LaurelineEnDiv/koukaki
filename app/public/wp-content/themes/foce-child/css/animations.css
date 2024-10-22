@@ -5,11 +5,11 @@
  @keyframes fadeInDown {
     from {
       opacity: 0;
-      transform: translateY(-100px); 
+      transform: translateY(-100px); /* Décalé de 100px en haut */
     }
     to {
       opacity: 1;
-      transform: translateY(0); 
+      transform: translateY(0); /* Position initiale */
     }
   }
   
@@ -17,13 +17,24 @@
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(100px); 
+      transform: translateY(100px); /* Décalé de 100px en bas */
     }
     to {
       opacity: 1;
       transform: translateY(0); 
     }
   }
+
+   /* Rotation des fleurs */
+   @keyframes rotateFlower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  
   
   /* Flottement du logo */
   @keyframes float {
@@ -38,13 +49,5 @@
     }
   }
   
-  /* Rotation des fleurs */
-  @keyframes rotateFlower {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-  }
+ 
   
