@@ -216,7 +216,7 @@
 
 .story__article::after,
 .story h2::after {
-  animation: fadeInUp 2s ease-in-out forwards, rotateFlower 15s linear infinite;
+  animation: fadeInUpRotate 2s ease-in-out forwards, rotateFlower 15s linear infinite;
 }
 
 .float {

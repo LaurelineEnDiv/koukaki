@@ -35,6 +35,17 @@
     }
   }
   
+  /* Fade-in ascendant + rotation des fleurs */
+  @keyframes fadeInUpRotate {
+  from {
+    opacity: 0;
+    transform: translateY(100px) rotate(0deg); /* Départ avec translation et rotation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg); /* Fin avec rotation complète et translation à 0 */
+  }
+  } 
   
   /* Flottement du logo */
   @keyframes float {
